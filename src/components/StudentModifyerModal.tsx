@@ -5,11 +5,15 @@ import LoadingSpinner from "./LoadingSpinner";
 export default function AddStudentModal({
   isModalOpen,
   onClose,
-  studentData, // New prop to pass the student data for editing
+  studentData,
+  reloadData,
+  setSelectedData,
 }: {
   isModalOpen: boolean;
   onClose: () => void;
-  studentData?: StudentData; // Optional prop for editing data
+  studentData?: StudentData;
+  reloadData: () => void;
+  setSelectedData: (student: StudentData[]) => void;
 }) {
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState<StudentData>({
@@ -97,6 +101,8 @@ export default function AddStudentModal({
       console.error("Error adding student:", error);
     } finally {
       setIsLoading(false);
+      reloadData();
+      setSelectedData([]);
     }
   };
 
@@ -128,6 +134,8 @@ export default function AddStudentModal({
       console.error("Error adding student:", error);
     } finally {
       setIsLoading(false);
+      reloadData();
+      setSelectedData([]);
     }
   };
 

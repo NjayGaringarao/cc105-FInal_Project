@@ -126,3 +126,44 @@ export async function PUT(request: Request) {
     );
   }
 }
+
+export async function DELETE(request: Request) {
+  try {
+    const url = new URL(request.url);
+    const studentNo = url.searchParams.get("student_no");
+
+    if (!studentNo) {
+      return NextResponse.json(
+        { error: "Missing required parameter: student_no" },
+        { status: 400 }
+      );
+    }
+
+    const db = await createConnection();
+
+    const sql = `
+      DELETE FROM Student 
+      WHERE student_no = ?
+    `;
+    const [result] = await db.query(sql, [studentNo]);
+
+    const affectedRows = (result as any).affectedRows;
+
+    if (affectedRows === 0) {
+      return NextResponse.json({ error: "Student not found" }, { status: 404 });
+    }
+
+    return NextResponse.json({
+      success: true,
+      message: "Student deleted successfully",
+    });
+  } catch (error) {
+    console.error(`Error in api/route/DELETE: ${error}`);
+    return NextResponse.json(
+      {
+        error: error instanceof Error ? error.message : "Internal Server Error",
+      },
+      { status: 500 }
+    );
+  }
+}

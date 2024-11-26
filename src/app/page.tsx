@@ -40,6 +40,41 @@ export default function Home() {
     }
   };
 
+  const deleteStudentDataHandle = async () => {
+    setIsLoading(true);
+
+    selectedStudentData.forEach(async (studentData) => {
+      try {
+        const response = await fetch(
+          `/api/students?student_no=${studentData.student_no}`,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(
+            `Failed to delete student: ${response.status} ${
+              errorData.error || response.statusText
+            }`
+          );
+        }
+
+        const result = await response.json();
+        console.log("Student deleted successfully:", result);
+      } catch (error) {
+        console.error("Error deleting student:", error);
+      }
+    });
+
+    setIsLoading(false);
+    reloadStudentData();
+  };
+
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
@@ -102,7 +137,7 @@ export default function Home() {
 
             {!!selectedStudentData.length && (
               <button
-                onClick={() => {}}
+                onClick={deleteStudentDataHandle}
                 className="px-4 py-1 my-1 bg-red-500 text-white rounded-md"
               >
                 <span className="font-semibold text-gray-300 text-md sm:text-md md:text-lg lg:text-xl">
@@ -118,6 +153,8 @@ export default function Home() {
             isModalOpen={isModalOpen}
             onClose={closeModal}
             studentData={onEditData}
+            reloadData={reloadStudentData}
+            setSelectedData={setSelectedStudentData}
           />
         )}
       </div>
