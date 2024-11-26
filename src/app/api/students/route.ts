@@ -69,3 +69,60 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: error }, { status: 500 });
   }
 }
+
+export async function PUT(request: Request) {
+  try {
+    const studentData: StudentData = await request.json();
+
+    if (
+      !studentData.student_no ||
+      !studentData.last_name ||
+      !studentData.first_name ||
+      !studentData.year_level ||
+      !studentData.birthday ||
+      !studentData.sex
+    ) {
+      return NextResponse.json(
+        { error: "Missing required fields in student data" },
+        { status: 400 }
+      );
+    }
+
+    const db = await createConnection();
+
+    const sql = `
+      UPDATE Student
+      SET last_name = ?, first_name = ?, middle_name = ?, year_level = ?, birthday = ?, sex = ?, contact_no = ?
+      WHERE student_no = ?
+    `;
+    const values = [
+      studentData.last_name,
+      studentData.first_name,
+      studentData.middle_name,
+      studentData.year_level,
+      studentData.birthday,
+      studentData.sex,
+      studentData.contact_no,
+      studentData.student_no,
+    ];
+
+    const [result] = await db.query(sql, values);
+
+    const affectedRows = (result as any).affectedRows;
+
+    if (affectedRows === 0) {
+      return NextResponse.json(
+        { error: "Student not found or no changes made" },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json({ success: true, result });
+  } catch (error) {
+    console.error(`Error in api/route/PUT: ${error}`);
+    return NextResponse.json(
+      { error: error || "Internal Server Error" },
+      { status: 500 }
+    );
+  }
+}

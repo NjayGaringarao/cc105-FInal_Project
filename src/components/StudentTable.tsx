@@ -3,32 +3,34 @@ import React, { useState, useEffect } from "react";
 
 interface StudentTableProps {
   data: StudentData[];
-  selectedStudentNo: string[];
-  setSelectedStudentNo: React.Dispatch<React.SetStateAction<string[]>>;
+  selectedStudentData: StudentData[];
+  setSelectedStudentData: React.Dispatch<React.SetStateAction<StudentData[]>>;
+  yearLevel: string;
 }
 
 const StudentTable: React.FC<StudentTableProps> = ({
   data,
-  selectedStudentNo,
-  setSelectedStudentNo,
+  selectedStudentData,
+  setSelectedStudentData,
+  yearLevel,
 }) => {
   const allSelected =
-    data.length > 0 && selectedStudentNo.length === data.length;
+    data.length > 0 && selectedStudentData.length === data.length;
 
-  const handleRowSelection = (studentNo: string) => {
-    setSelectedStudentNo(
+  const handleRowSelection = (student: StudentData) => {
+    setSelectedStudentData(
       (prev) =>
-        prev.includes(studentNo)
-          ? prev.filter((no) => no !== studentNo) // Unselect
-          : [...prev, studentNo] // Select
+        prev.some((s) => s.student_no === student.student_no)
+          ? prev.filter((s) => s.student_no !== student.student_no) // Unselect
+          : [...prev, student] // Select
     );
   };
 
   const handleSelectAll = () => {
     if (allSelected) {
-      setSelectedStudentNo([]); // Unselect all
+      setSelectedStudentData([]); // Unselect all
     } else {
-      setSelectedStudentNo(data.map((student) => student.student_no)); // Select all
+      setSelectedStudentData(data); // Select all
     }
   };
 
@@ -59,7 +61,7 @@ const StudentTable: React.FC<StudentTableProps> = ({
                 className="cursor-pointer"
               />
             </th>
-            <th className=" border border-gray-400 px-4 py-2">Student No.</th>
+            <th className="border border-gray-400 px-4 py-2">Student No.</th>
             <th className="border border-gray-400 px-4 py-2">Name</th>
             <th className="border border-gray-400 px-4 py-2">Age</th>
             <th className="border border-gray-400 px-4 py-2">Sex</th>
@@ -72,8 +74,10 @@ const StudentTable: React.FC<StudentTableProps> = ({
               <td className="border border-gray-400 px-4 py-4 text-center">
                 <input
                   type="checkbox"
-                  checked={selectedStudentNo.includes(student.student_no)}
-                  onChange={() => handleRowSelection(student.student_no)}
+                  checked={selectedStudentData.some(
+                    (s) => s.student_no === student.student_no
+                  )}
+                  onChange={() => handleRowSelection(student)}
                   className="cursor-pointer"
                 />
               </td>
@@ -99,73 +103,13 @@ const StudentTable: React.FC<StudentTableProps> = ({
           ))}
         </tbody>
       </table>
+      {!data.length && (
+        <div className="h-40 rounded-lg flex items-center justify-center">
+          <span className="text-base sm:text-lg md:text-xl lg:text-xl font-semibold">{`No data for ${yearLevel} Year`}</span>
+        </div>
+      )}
     </div>
   );
 };
-
-// Utility function to calculate age
-const calculateAge = (birthday: string): number => {
-  const birthDate = new Date(birthday);
-  const today = new Date();
-  let age = today.getFullYear() - birthDate.getFullYear();
-  const monthDiff = today.getMonth() - birthDate.getMonth();
-  if (
-    monthDiff < 0 ||
-    (monthDiff === 0 && today.getDate() < birthDate.getDate())
-  ) {
-    age--;
-  }
-  return age;
-};
-
-// Dummy data
-const studentData = [
-  {
-    studentNo: "1234567890",
-    lastName: "Doe",
-    firstName: "John",
-    middleName: "A.",
-    birthday: "2005-03-15",
-    sex: "Male",
-    contactNo: "09123456789",
-  },
-  {
-    studentNo: "9876543210",
-    lastName: "Smith",
-    firstName: "Jane",
-    middleName: "",
-    birthday: "2000-10-01",
-    sex: "Female",
-    contactNo: "09876543210",
-  },
-];
-
-// // Convert birthday to age before passing data to the table
-// const preparedStudentData = studentData.map((student) => ({
-//   ...student,
-//   age: calculateAge(student.birthday),
-// }));
-
-// export default function App() {
-//   const [selectedStudentNo, setSelectedStudentNo] = useState<string[]>([]);
-
-//   return (
-//     <div>
-//       <StudentTable
-//         data={preparedStudentData}
-//         selectedStudentNo={selectedStudentNo}
-//         setSelectedStudentNo={setSelectedStudentNo}
-//       />
-//       <div className="mt-4">
-//         <p className="text-sm">
-//           Selected Student Numbers:{" "}
-//           {selectedStudentNo.length > 0
-//             ? selectedStudentNo.join(", ")
-//             : "None selected"}
-//         </p>
-//       </div>
-//     </div>
-//   );
-// }
 
 export default StudentTable;
