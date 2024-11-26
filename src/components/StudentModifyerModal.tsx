@@ -160,7 +160,7 @@ export default function AddStudentModal({
     <>
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-300 bg-opacity-50">
-          <div className="relative bg-[--background] rounded-lg shadow-lg w-full max-w-2xl mx-12 ">
+          <div className="relative bg-[--background] rounded-lg shadow-lg w-full max-w-2xl mx-4 ">
             {/* Loading Overlay */}
             {isLoading && (
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 z-10 rounded-lg">
@@ -169,7 +169,7 @@ export default function AddStudentModal({
             )}
 
             <div className="border-b px-4 py-3 flex justify-between items-center ">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-semibold">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-semibold text-panel">
                 {studentData ? "Edit Student" : "Add Student"}
               </h2>
               <button
@@ -189,7 +189,7 @@ export default function AddStudentModal({
                 <div>
                   <label
                     htmlFor="student_no"
-                    className="block text-sm font-semibold text-gray-300"
+                    className="block text-sm font-semibold text-gray-800"
                   >
                     Student No.
                   </label>
@@ -200,7 +200,7 @@ export default function AddStudentModal({
                     onChange={handleInputChange}
                     className={`p-2 mt-1 border rounded-md w-full ${
                       errors.student_no ? "border-red-500" : ""
-                    } bg-gray-300 text-gray-800 font-mono`}
+                    } bg-lightPanel text-gray-900 font-mono`}
                     placeholder="Enter student's number"
                     disabled={!!studentData}
                   />
@@ -213,7 +213,7 @@ export default function AddStudentModal({
                 <div>
                   <label
                     htmlFor="year_level"
-                    className="block text-sm font-semibold text-gray-300"
+                    className="block text-sm font-semibold text-gray-800"
                   >
                     Year Level
                   </label>
@@ -221,7 +221,9 @@ export default function AddStudentModal({
                     id="year_level"
                     value={formData.year_level}
                     onChange={handleInputChange}
-                    className="p-2 mt-1 border rounded-md w-full bg-gray-300 text-gray-800 font-mono"
+                    className={`p-2 mt-1 border rounded-md w-full ${
+                      errors.year_level ? "border-red-500" : ""
+                    } bg-lightPanel text-gray-900 font-mono`}
                   >
                     {[1, 2, 3, 4].map((level) => (
                       <option key={level} value={level}>
@@ -237,7 +239,7 @@ export default function AddStudentModal({
                 <div>
                   <label
                     htmlFor="last_name"
-                    className="block text-sm font-semibold text-gray-300"
+                    className="block text-sm font-semibold text-gray-800"
                   >
                     Last Name
                   </label>
@@ -248,7 +250,7 @@ export default function AddStudentModal({
                     onChange={handleInputChange}
                     className={`p-2 mt-1 border rounded-md w-full ${
                       errors.last_name ? "border-red-500" : ""
-                    } bg-gray-300 text-gray-800 font-mono`}
+                    } bg-lightPanel text-gray-900 font-mono`}
                     placeholder="Enter last name"
                   />
                   {errors.last_name && (
@@ -260,7 +262,7 @@ export default function AddStudentModal({
                 <div>
                   <label
                     htmlFor="first_name"
-                    className="block text-sm font-semibold text-gray-300"
+                    className="block text-sm font-semibold text-gray-800"
                   >
                     First Name
                   </label>
@@ -271,7 +273,7 @@ export default function AddStudentModal({
                     onChange={handleInputChange}
                     className={`p-2 mt-1 border rounded-md w-full ${
                       errors.first_name ? "border-red-500" : ""
-                    } bg-gray-300 text-gray-800 font-mono`}
+                    } bg-lightPanel text-gray-900 font-mono`}
                     placeholder="Enter first name"
                   />
                   {errors.first_name && (
@@ -283,7 +285,7 @@ export default function AddStudentModal({
                 <div>
                   <label
                     htmlFor="middle_name"
-                    className="block text-sm font-semibold text-gray-300"
+                    className="block text-sm font-semibold text-gray-800"
                   >
                     Middle Name
                   </label>
@@ -292,9 +294,16 @@ export default function AddStudentModal({
                     id="middle_name"
                     value={formData.middle_name}
                     onChange={handleInputChange}
-                    className="p-2 mt-1 border rounded-md w-full bg-gray-300 text-gray-800 font-mono"
+                    className={`p-2 mt-1 border rounded-md w-full ${
+                      errors.middle_name ? "border-red-500" : ""
+                    } bg-lightPanel text-gray-900 font-mono`}
                     placeholder="Enter middle name"
                   />
+                  {errors.middle_name && (
+                    <span className="text-red-500 text-sm">
+                      {errors.middle_name}
+                    </span>
+                  )}
                 </div>
               </div>
 
@@ -303,7 +312,7 @@ export default function AddStudentModal({
                 <div>
                   <label
                     htmlFor="birthday"
-                    className="block text-sm font-semibold text-gray-300"
+                    className="block text-sm font-semibold text-gray-800"
                   >
                     Birthday
                   </label>
@@ -314,7 +323,7 @@ export default function AddStudentModal({
                     onChange={handleInputChange}
                     className={`p-2 mt-1 border rounded-md w-full ${
                       errors.birthday ? "border-red-500" : ""
-                    } bg-gray-300 text-gray-800 font-mono`}
+                    } bg-lightPanel text-gray-900 font-mono`}
                   />
                   {errors.birthday && (
                     <span className="text-red-500 text-sm">
@@ -325,7 +334,7 @@ export default function AddStudentModal({
                 <div>
                   <label
                     htmlFor="sex"
-                    className="block text-sm font-semibold text-gray-300"
+                    className="block text-sm font-semibold text-gray-800"
                   >
                     Sex
                   </label>
@@ -335,7 +344,7 @@ export default function AddStudentModal({
                     onChange={handleInputChange}
                     className={`p-2 mt-1 border rounded-md w-full ${
                       errors.sex ? "border-red-500" : ""
-                    } bg-gray-300 text-gray-800 font-mono`}
+                    } bg-lightPanel text-gray-900 font-mono`}
                   >
                     <option value="">Select</option>
                     <option value="MALE">MALE</option>
@@ -348,7 +357,7 @@ export default function AddStudentModal({
                 <div>
                   <label
                     htmlFor="contact_no"
-                    className="block text-sm font-semibold text-gray-300"
+                    className="block text-sm font-semibold text-gray-800"
                   >
                     Contact No.
                   </label>
@@ -357,23 +366,31 @@ export default function AddStudentModal({
                     id="contact_no"
                     value={formData.contact_no}
                     onChange={handleInputChange}
-                    className="p-2 mt-1 border rounded-md w-full bg-gray-300 text-gray-800 font-mono"
+                    className={`p-2 mt-1 border rounded-md w-full ${
+                      errors.contact_no ? "border-red-500" : ""
+                    } bg-lightPanel text-gray-900 font-mono`}
                     placeholder="Enter contact number"
                   />
+                  {errors.contact_no && (
+                    <span className="text-red-500 text-sm">
+                      {errors.contact_no}
+                    </span>
+                  )}
                 </div>
               </div>
 
-              <div className="mt-4 flex justify-end gap-4">
+              {/* Submit and Cancel Buttons */}
+              <div className="mt-4 flex justify-end">
                 <button
                   type="submit"
-                  className="py-2 px-4 bg-gray-400 text-white rounded-md font-semibold"
+                  className="py-2 px-4 bg-panel text-white rounded-md font-semibold"
                 >
                   {studentData ? "Save Changes" : "Add Student"}
                 </button>
                 <button
                   type="button"
                   onClick={onClose}
-                  className="py-2 px-4 bg-gray-400 text-white rounded-md font-semibold"
+                  className="py-2 px-4 text-panel rounded-md font-semibold"
                 >
                   Cancel
                 </button>

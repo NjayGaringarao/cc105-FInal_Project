@@ -51,8 +51,8 @@ const StudentTable: React.FC<StudentTableProps> = ({
 
   return (
     <div className="overflow-auto h-full">
-      <table className="table-auto w-full border-collapse border border-gray-300">
-        <thead className="bg-gray-300 text-gray-800 font-extrabold text-lg sm:text-lg md:text-xl lg:text-xl px-4">
+      <table className="table-auto w-full border-collapse border border-lightPanel">
+        <thead className="font-mono bg-lightPanel text-gray-600 text-lg sm:text-lg md:text-xl lg:text-2xl px-4">
           <tr>
             <th className="border border-gray-400 p-4">
               <input
@@ -69,7 +69,7 @@ const StudentTable: React.FC<StudentTableProps> = ({
             <th className="border border-gray-400 px-4 py-2">Contact No.</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="font-mono text-base sm:text-lg md:text-xl lg:text-xl">
           {data.map((student, index) => (
             <tr key={index}>
               <td className="border border-gray-400 text-center">
@@ -82,22 +82,22 @@ const StudentTable: React.FC<StudentTableProps> = ({
                   className="cursor-pointer h-4 w-4"
                 />
               </td>
-              <td className="border border-gray-400 px-4 py-4 text-center text-lg sm:text-lg md:text-xl lg:text-xl font-mono">
+              <td className="border border-gray-400 px-4 py-4 text-center">
                 {student.student_no}
               </td>
-              <td className="border border-gray-400 px-4 py-4 text-lg sm:text-lg md:text-xl lg:text-xl font-mono">
+              <td className="border border-gray-400 px-4 py-4">
                 {student.last_name
                   .concat(", ")
                   .concat(student.first_name)
                   .concat(` ${student.middle_name && student.middle_name}`)}
               </td>
-              <td className="border border-gray-400 px-4 py-4 text-center text-lg sm:text-lg md:text-xl lg:text-xl font-mono">
+              <td className="border border-gray-400 px-4 py-4 text-center">
                 {calculateAge(student.birthday)}
               </td>
-              <td className="border border-gray-400 px-4 py-4 text-center text-lg sm:text-lg md:text-xl lg:text-xl font-mono">
+              <td className="border border-gray-400 px-4 py-4 text-center">
                 {student.sex}
               </td>
-              <td className="border border-gray-400 px-4 py-4 text-center text-lg sm:text-lg md:text-xl lg:text-xl font-mono">
+              <td className="border border-gray-400 px-4 py-4 text-center">
                 {student.contact_no}
               </td>
             </tr>
@@ -106,7 +106,7 @@ const StudentTable: React.FC<StudentTableProps> = ({
       </table>
       {!data.length && (
         <div className="h-40 rounded-lg flex items-center justify-center">
-          <span className="text-base sm:text-lg md:text-xl lg:text-xl font-semibold">{`No data for ${yearLevel} Year`}</span>
+          <span className="text-panel font-mono text-lg sm:text-lg md:text-xl lg:text-xl font-semibold">{`No data for ${yearLevel} Year`}</span>
         </div>
       )}
     </div>

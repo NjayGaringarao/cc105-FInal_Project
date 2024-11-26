@@ -91,7 +91,7 @@ export default function MainSection() {
   }, [selectedStudentData]);
 
   return (
-    <div className="h-screen w-screen items-center justify-items-center py-12 px-8 overflow-x-hidden">
+    <div className="h-auto w-screen items-center justify-items-center py-12 px-4 overflow-x-hidden">
       {/* <h1 className="pb-8 text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold">
         BSCS Student Database
       </h1> */}
@@ -101,7 +101,7 @@ export default function MainSection() {
           displayingYear={displayingYear}
           setDisplayingYear={setDisplayingYear}
         />
-        <div className="border-2 border-gray-300 rounded-t-lg overflow-x-auto mt-2 h-[35rem] relative">
+        <div className="border-2 border-panel rounded-t-lg overflow-x-auto mt-2 h-[35rem] relative">
           <StudentTable
             data={studentData}
             selectedStudentData={selectedStudentData}
@@ -109,13 +109,13 @@ export default function MainSection() {
             yearLevel={numberToOrdinal(displayingYear)}
           />
         </div>
-        <div className="w-full border-2 border-gray-300 rounded-b-lg flex flex-row px-2">
+        <div className="w-full border-2 border-panel rounded-b-lg flex flex-row px-2 bg-lightPanel">
           {!selectedStudentData.length && (
             <button
               onClick={openModal}
-              className="px-4 py-2 my-1 bg-gray-300 text-white rounded-md"
+              className="px-4 py-2 my-1 bg-panel text-white rounded-md"
             >
-              <span className=" font-semibold text-gray-700 text-md sm:text-md md:text-lg lg:text-xl">
+              <span className=" font-semibold text-white text-base sm:text-base md:text-lg lg:text-xl">
                 Add Student{" "}
               </span>
             </button>
@@ -138,7 +138,7 @@ export default function MainSection() {
                 onClick={deleteStudentDataHandle}
                 className="px-4 py-2 my-1 bg-red-500 text-white rounded-md"
               >
-                <span className="font-semibold text-gray-300 text-md sm:text-md md:text-lg lg:text-xl">
+                <span className="font-semibold text-white text-md sm:text-md md:text-lg lg:text-xl">
                   Delete
                 </span>
               </button>
