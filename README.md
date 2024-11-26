@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BSCS Database
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project is an Information Management System (IMS) developed with a focus on handling student data efficiently. The system allows for CRUD operations (Create, Read, Update, Delete) on student records and provides functionalities such as:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Student registration and profile management.
+- Viewing student information based on year levels.
+- Real-time updates to student data.
+- Integration with backend services (MariaDB, Appwrite, etc.)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Technologies Used:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend**: React (Next.js), Tailwind CSS
+- **Backend**: Node.js, MariaDB, Appwrite (for cloud functions)
+- **Database**: MariaDB for storing student data
+- **Authentication**: Appwrite for managing users and sessions
+- **Styling**: Tailwind CSS for responsive and clean UI design
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+### Student Management:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Add Students**: Register students with basic details such as Student Number, Name, Year Level, Contact Info, etc.
+- **Edit Students**: Modify student details, including name, year level, and contact info.
+- **View Students**: Filter and view students based on year level.
+- **Delete Students**: Remove student records from the system.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Real-Time Data:
 
-## Deploy on Vercel
+- The system utilizes Appwrite to handle user authentication and manage notifications, ensuring that the data is kept in sync across multiple clients.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Responsive Design:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- The project is designed to be fully responsive, ensuring that it works seamlessly across mobile, tablet, and desktop devices.
+
+---
+
+## Setup
+
+### Prerequisites
+
+Before you begin, make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (v14 or later)
+- [XAMPP](https://www.apachefriends.org/) or a compatible database
+
+### Installation
+
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/NjayGaringarao/cc105-FInal_Project
+   cd information-management
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Set up environment variables by creating a `.env` file. Ensure you configure the database connection and Appwrite API keys:
+
+   ```bash
+   DB_HOST=<your-database-host>
+   DB_USER=<your-database-user>
+   DB_PASS=<your-database-password>
+   APPWRITE_API_KEY=<your-appwrite-api-key>
+   ```
+
+4. Run the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Visit the application in your browser at `http://localhost:3000`.
+
+---
+
+## API Endpoints
+
+The following API endpoints are available in the project:
+
+### GET `/api/students`
+
+Fetch all students by year level.
+
+- Query Parameter: `yearLevel` (integer)
+
+### POST `/api/students`
+
+Add a new student.
+
+- Request Body: JSON object with student data (e.g., student_no, last_name, first_name, etc.)
+
+### PUT `/api/students`
+
+Update an existing student's details.
+
+- Request Body: JSON object with student data (e.g., student_no, last_name, first_name, etc.)
+
+### DELETE `/api/students`
+
+Delete a student by student number.
+
+- Request Body: JSON object with the student number to delete.
+
+---
+
+## Folder Structure
+
+- `pages/`: Contains the main pages of the app (Next.js pages).
+- `components/`: Contains reusable React components.
+- `lib/`: Contains database-related functions and Appwrite interactions.
+- `public/`: Static files like images and icons.
+- `styles/`: Tailwind CSS configurations.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
+
+---
