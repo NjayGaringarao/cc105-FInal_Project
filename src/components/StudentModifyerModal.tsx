@@ -53,7 +53,7 @@ export default function AddStudentModal({
     if (!formData.birthday || !isValidDate(formData.birthday)) {
       newErrors.birthday = "You must be at least 16 years old.";
     }
-    if (formData.sex !== "Male" && formData.sex !== "Female") {
+    if (formData.sex !== "MALE" && formData.sex !== "FEMALE") {
       newErrors.sex = "Sex must be either Male or Female.";
     }
 
@@ -103,7 +103,7 @@ export default function AddStudentModal({
   const updateStudentData = async (studentData: StudentData) => {
     try {
       setIsLoading(true);
-      const response = await fetch("/api/student", {
+      const response = await fetch("/api/students", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -194,7 +194,7 @@ export default function AddStudentModal({
                       errors.student_no ? "border-red-500" : ""
                     } bg-gray-300 text-gray-800 font-mono`}
                     placeholder="Enter student's number"
-                    disabled={!studentData}
+                    disabled={!!studentData}
                   />
                   {errors.student_no && (
                     <span className="text-red-500 text-sm">
@@ -302,7 +302,7 @@ export default function AddStudentModal({
                   <input
                     type="date"
                     id="birthday"
-                    value={formData.birthday}
+                    value={formData.birthday.split("T")[0]}
                     onChange={handleInputChange}
                     className={`p-2 mt-1 border rounded-md w-full ${
                       errors.birthday ? "border-red-500" : ""
@@ -330,8 +330,8 @@ export default function AddStudentModal({
                     } bg-gray-300 text-gray-800 font-mono`}
                   >
                     <option value="">Select</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <option value="MALE">MALE</option>
+                    <option value="FEMALE">FEMALE</option>
                   </select>
                   {errors.sex && (
                     <span className="text-red-500 text-sm">{errors.sex}</span>

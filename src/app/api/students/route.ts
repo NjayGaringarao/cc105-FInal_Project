@@ -100,7 +100,7 @@ export async function PUT(request: Request) {
       studentData.first_name,
       studentData.middle_name,
       studentData.year_level,
-      studentData.birthday,
+      studentData.birthday.split("Z")[0],
       studentData.sex,
       studentData.contact_no,
       studentData.student_no,

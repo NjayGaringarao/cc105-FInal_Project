@@ -35,6 +35,7 @@ const StudentTable: React.FC<StudentTableProps> = ({
   };
 
   const calculateAge = (birthday: string): number => {
+    console.log(birthday);
     const birthDate = new Date(birthday);
     const today = new Date();
     let age = today.getFullYear() - birthDate.getFullYear();
