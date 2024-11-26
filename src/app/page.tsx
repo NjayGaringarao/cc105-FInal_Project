@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from "react";
 import YearLevelTab from "@/components/YearLevelTab";
-import StudentDisplay from "@/components/StudentDisplay";
-import AddStudentForm from "@/components/AddStudentForm";
 import StudentTable from "@/components/StudentTable";
 import { StudentData } from "@/constant/types";
 import AddStudentModal from "@/components/StudentModifyerModal";
@@ -103,7 +101,7 @@ export default function Home() {
           displayingYear={displayingYear}
           setDisplayingYear={setDisplayingYear}
         />
-        <div className="border-2 rounded-t-lg overflow-x-auto mt-2 h-[35rem] relative">
+        <div className="border-2 border-gray-300 rounded-t-lg overflow-x-auto mt-2 h-[35rem] relative">
           <StudentTable
             data={studentData}
             selectedStudentData={selectedStudentData}
@@ -111,11 +109,11 @@ export default function Home() {
             yearLevel={numberToOrdinal(displayingYear)}
           />
         </div>
-        <div className="w-full border-2 rounded-b-lg flex flex-row px-2">
+        <div className="w-full border-2 border-gray-300 rounded-b-lg flex flex-row px-2">
           {!selectedStudentData.length && (
             <button
               onClick={openModal}
-              className="px-4 py-1 my-1 bg-gray-300 text-white rounded-md"
+              className="px-4 py-2 my-1 bg-gray-300 text-white rounded-md"
             >
               <span className=" font-semibold text-gray-700 text-md sm:text-md md:text-lg lg:text-xl">
                 Add Student{" "}
@@ -127,7 +125,7 @@ export default function Home() {
             {onEditData && (
               <button
                 onClick={openModal}
-                className="px-4 py-1 my-1 mr-2 bg-gray-300 text-white rounded-md"
+                className="px-4 py-2 my-1 mr-2 bg-gray-300 text-white rounded-md"
               >
                 <span className="font-semibold text-gray-700 text-md sm:text-md md:text-lg lg:text-xl">
                   Edit
@@ -138,7 +136,7 @@ export default function Home() {
             {!!selectedStudentData.length && (
               <button
                 onClick={deleteStudentDataHandle}
-                className="px-4 py-1 my-1 bg-red-500 text-white rounded-md"
+                className="px-4 py-2 my-1 bg-red-500 text-white rounded-md"
               >
                 <span className="font-semibold text-gray-300 text-md sm:text-md md:text-lg lg:text-xl">
                   Delete

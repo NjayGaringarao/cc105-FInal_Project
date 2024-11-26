@@ -159,8 +159,8 @@ export default function AddStudentModal({
   return (
     <>
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-50">
-          <div className="relative bg-[#202020] rounded-lg shadow-lg w-full max-w-xl mx-12 ">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-300 bg-opacity-50">
+          <div className="relative bg-[--background] rounded-lg shadow-lg w-full max-w-2xl mx-12 ">
             {/* Loading Overlay */}
             {isLoading && (
               <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 z-10 rounded-lg">
@@ -168,8 +168,8 @@ export default function AddStudentModal({
               </div>
             )}
 
-            <div className="border-b px-4 py-3 flex justify-between items-center">
-              <h2 className="text-xl font-semibold">
+            <div className="border-b px-4 py-3 flex justify-between items-center ">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-semibold">
                 {studentData ? "Edit Student" : "Add Student"}
               </h2>
               <button
@@ -366,14 +366,14 @@ export default function AddStudentModal({
               <div className="mt-4 flex justify-end gap-4">
                 <button
                   type="submit"
-                  className="py-2 px-4 bg-blue-500 text-white rounded-md"
+                  className="py-2 px-4 bg-gray-400 text-white rounded-md font-semibold"
                 >
                   {studentData ? "Save Changes" : "Add Student"}
                 </button>
                 <button
                   type="button"
                   onClick={onClose}
-                  className="py-2 px-4 bg-red-500 text-white rounded-md"
+                  className="py-2 px-4 bg-gray-400 text-white rounded-md font-semibold"
                 >
                   Cancel
                 </button>

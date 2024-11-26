@@ -52,14 +52,14 @@ const StudentTable: React.FC<StudentTableProps> = ({
   return (
     <div className="overflow-auto h-full">
       <table className="table-auto w-full border-collapse border border-gray-300">
-        <thead className="bg-gray-300 text-gray-800">
+        <thead className="bg-gray-300 text-gray-800 font-extrabold text-lg sm:text-lg md:text-xl lg:text-xl px-4">
           <tr>
-            <th className="border border-gray-400 px-4 py-2">
+            <th className="border border-gray-400 p-4">
               <input
                 type="checkbox"
                 checked={allSelected}
                 onChange={handleSelectAll}
-                className="cursor-pointer"
+                className="cursor-pointer h-4 w-4"
               />
             </th>
             <th className="border border-gray-400 px-4 py-2">Student No.</th>
@@ -72,32 +72,32 @@ const StudentTable: React.FC<StudentTableProps> = ({
         <tbody>
           {data.map((student, index) => (
             <tr key={index}>
-              <td className="border border-gray-400 px-4 py-4 text-center">
+              <td className="border border-gray-400 text-center">
                 <input
                   type="checkbox"
                   checked={selectedStudentData.some(
                     (s) => s.student_no === student.student_no
                   )}
                   onChange={() => handleRowSelection(student)}
-                  className="cursor-pointer"
+                  className="cursor-pointer h-4 w-4"
                 />
               </td>
-              <td className="border border-gray-400 px-4 py-2 text-center">
+              <td className="border border-gray-400 px-4 py-4 text-center text-lg sm:text-lg md:text-xl lg:text-xl font-mono">
                 {student.student_no}
               </td>
-              <td className="border border-gray-400 px-4 py-2">
+              <td className="border border-gray-400 px-4 py-4 text-lg sm:text-lg md:text-xl lg:text-xl font-mono">
                 {student.last_name
                   .concat(", ")
                   .concat(student.first_name)
                   .concat(` ${student.middle_name && student.middle_name}`)}
               </td>
-              <td className="border border-gray-400 px-4 py-2 text-center">
+              <td className="border border-gray-400 px-4 py-4 text-center text-lg sm:text-lg md:text-xl lg:text-xl font-mono">
                 {calculateAge(student.birthday)}
               </td>
-              <td className="border border-gray-400 px-4 py-2 text-center">
+              <td className="border border-gray-400 px-4 py-4 text-center text-lg sm:text-lg md:text-xl lg:text-xl font-mono">
                 {student.sex}
               </td>
-              <td className="border border-gray-400 px-4 py-2 text-center">
+              <td className="border border-gray-400 px-4 py-4 text-center text-lg sm:text-lg md:text-xl lg:text-xl font-mono">
                 {student.contact_no}
               </td>
             </tr>
