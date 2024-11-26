@@ -3,7 +3,7 @@ import { useState } from "react";
 import LoadingSpinner from "./LoadingSpinner";
 
 export default function AddStudentForm() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState<StudentData>({
     student_no: "",
     last_name: "",
@@ -62,6 +62,7 @@ export default function AddStudentForm() {
 
   const addStudentData = async (studentData: StudentData) => {
     try {
+      setIsLoading(true);
       const response = await fetch("/api/students", {
         method: "POST",
         headers: {
@@ -85,6 +86,8 @@ export default function AddStudentForm() {
       setErrors({});
     } catch (error) {
       console.error("Error adding student:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -99,7 +102,7 @@ export default function AddStudentForm() {
     <div className="relative w-full mx-auto">
       {/* Loading Overlay */}
       {isLoading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-10">
+        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-80 z-10 rounded-lg">
           <LoadingSpinner />
         </div>
       )}
@@ -295,7 +298,6 @@ export default function AddStudentForm() {
             </button>
           </div>
         </form>
-        {isLoading && <LoadingSpinner />}
       </div>
     </div>
   );
