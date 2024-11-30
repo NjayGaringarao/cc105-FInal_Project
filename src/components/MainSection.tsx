@@ -109,7 +109,7 @@ export default function MainSection() {
           displayingYear={displayingYear}
           setDisplayingYear={setDisplayingYear}
         />
-        <div className="border-2 border-panel rounded-t-lg overflow-x-auto mt-2 h-[35rem] relative">
+        <div className="border-2 border-primary rounded-t-lg overflow-x-auto mt-2 h-[35rem] relative">
           <StudentTable
             data={studentData}
             selectedStudentData={selectedStudentData}
@@ -117,11 +117,11 @@ export default function MainSection() {
             yearLevel={numberToOrdinal(displayingYear)}
           />
         </div>
-        <div className="w-full border-2 border-panel rounded-b-lg flex flex-row px-2 bg-lightPanel">
+        <div className="w-full border-2 border-primary rounded-b-lg flex flex-row px-2 bg-lightPrimary">
           {!selectedStudentData.length && (
             <button
               onClick={openModal}
-              className="px-4 py-2 my-1 bg-panel text-white rounded-md"
+              className="px-4 py-2 my-1 bg-primary text-white rounded-md"
             >
               <span className=" font-semibold text-white text-base sm:text-base md:text-lg lg:text-xl">
                 Add Student{" "}
@@ -133,7 +133,7 @@ export default function MainSection() {
             {onEditData && (
               <button
                 onClick={openModal}
-                className="px-4 py-2 my-1 mr-2 bg-panel text-white rounded-md"
+                className="px-4 py-2 my-1 mr-2 bg-primary text-white rounded-md"
               >
                 <span className="font-semibold  text-md sm:text-md md:text-lg lg:text-xl">
                   Edit

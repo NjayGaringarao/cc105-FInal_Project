@@ -2,7 +2,7 @@
 
 export default function FooterSection() {
   return (
-    <footer className="bg-panel h-auto w-screen flex flex-col items-center py-12 px-8 text-gray-200">
+    <footer className="bg-primary h-auto w-screen flex flex-col items-center py-12 px-8 text-gray-200 overflow-x-hidden">
       {/* Top Section with Links */}
       <div className="w-full max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-6">
         {/* About This Section */}
@@ -10,7 +10,7 @@ export default function FooterSection() {
           <h2 className="text-lg font-semibold text-gray-100 mb-4">
             About This
           </h2>
-          <p className="text-sm text-lightPanel">
+          <p className="text-sm text-lightPrimary">
             This is for the purpose of partial-fulfillment in the subject CC105
             - Information Management for the program of Bachelor of Science in
             Computer Science
@@ -75,7 +75,7 @@ export default function FooterSection() {
         {/* Contact Info */}
         <div>
           <h2 className="text-lg font-semibold text-gray-100 mb-4">Contact</h2>
-          <ul className="space-y-2 text-sm text-lightPanel">
+          <ul className="space-y-2 text-sm text-lightPrimary">
             <li>
               <span className="font-semibold">Address:</span> San Marcelino,
               Zambales

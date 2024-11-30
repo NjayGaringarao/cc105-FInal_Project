@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <div
-      className="relative bg-panel h-screen w-screen items-center justify-center overflow-x-hidden"
+      className="relative bg-primary h-screen w-screen items-center justify-center overflow-x-hidden"
       style={{
         backgroundImage: "url('/images/prmsu_gate.png')",
         backgroundSize: "cover",
@@ -12,7 +12,7 @@ export default function HeroSection() {
         backgroundAttachment: "fixed",
       }}
     >
-      <div className="absolute w-full h-full bg-panel opacity-80 z-0"></div>
+      <div className="absolute w-full h-full bg-primary opacity-80 z-0"></div>
 
       <div className="relative z-10 h-full flex flex-col justify-center items-center pt-8 pb-40 px-12">
         <div className="space-y-4">

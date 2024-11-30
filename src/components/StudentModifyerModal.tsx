@@ -169,7 +169,7 @@ export default function AddStudentModal({
             )}
 
             <div className="border-b px-4 py-3 flex justify-between items-center ">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-semibold text-panel">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-semibold text-primary">
                 {studentData ? "Edit Student" : "Add Student"}
               </h2>
               <button
@@ -200,7 +200,7 @@ export default function AddStudentModal({
                     onChange={handleInputChange}
                     className={`p-2 mt-1 border rounded-md w-full ${
                       errors.student_no ? "border-red-500" : ""
-                    } bg-lightPanel text-gray-900 font-mono`}
+                    } bg-lightPrimary text-gray-900 font-mono`}
                     placeholder="Enter student's number"
                     disabled={!!studentData}
                   />
@@ -223,7 +223,7 @@ export default function AddStudentModal({
                     onChange={handleInputChange}
                     className={`p-2 mt-1 border rounded-md w-full ${
                       errors.year_level ? "border-red-500" : ""
-                    } bg-lightPanel text-gray-900 font-mono`}
+                    } bg-lightPrimary text-gray-900 font-mono`}
                   >
                     {[1, 2, 3, 4].map((level) => (
                       <option key={level} value={level}>
@@ -250,7 +250,7 @@ export default function AddStudentModal({
                     onChange={handleInputChange}
                     className={`p-2 mt-1 border rounded-md w-full ${
                       errors.last_name ? "border-red-500" : ""
-                    } bg-lightPanel text-gray-900 font-mono`}
+                    } bg-lightPrimary text-gray-900 font-mono`}
                     placeholder="Enter last name"
                   />
                   {errors.last_name && (
@@ -273,7 +273,7 @@ export default function AddStudentModal({
                     onChange={handleInputChange}
                     className={`p-2 mt-1 border rounded-md w-full ${
                       errors.first_name ? "border-red-500" : ""
-                    } bg-lightPanel text-gray-900 font-mono`}
+                    } bg-lightPrimary text-gray-900 font-mono`}
                     placeholder="Enter first name"
                   />
                   {errors.first_name && (
@@ -296,7 +296,7 @@ export default function AddStudentModal({
                     onChange={handleInputChange}
                     className={`p-2 mt-1 border rounded-md w-full ${
                       errors.middle_name ? "border-red-500" : ""
-                    } bg-lightPanel text-gray-900 font-mono`}
+                    } bg-lightPrimary text-gray-900 font-mono`}
                     placeholder="Enter middle name"
                   />
                   {errors.middle_name && (
@@ -323,7 +323,7 @@ export default function AddStudentModal({
                     onChange={handleInputChange}
                     className={`p-2 mt-1 border rounded-md w-full ${
                       errors.birthday ? "border-red-500" : ""
-                    } bg-lightPanel text-gray-900 font-mono`}
+                    } bg-lightPrimary text-gray-900 font-mono`}
                   />
                   {errors.birthday && (
                     <span className="text-red-500 text-sm">
@@ -344,7 +344,7 @@ export default function AddStudentModal({
                     onChange={handleInputChange}
                     className={`p-2 mt-1 border rounded-md w-full ${
                       errors.sex ? "border-red-500" : ""
-                    } bg-lightPanel text-gray-900 font-mono`}
+                    } bg-lightPrimary text-gray-900 font-mono`}
                   >
                     <option value="">Select</option>
                     <option value="MALE">MALE</option>
@@ -368,7 +368,7 @@ export default function AddStudentModal({
                     onChange={handleInputChange}
                     className={`p-2 mt-1 border rounded-md w-full ${
                       errors.contact_no ? "border-red-500" : ""
-                    } bg-lightPanel text-gray-900 font-mono`}
+                    } bg-lightPrimary text-gray-900 font-mono`}
                     placeholder="Enter contact number"
                   />
                   {errors.contact_no && (
@@ -383,14 +383,14 @@ export default function AddStudentModal({
               <div className="mt-4 flex justify-end">
                 <button
                   type="submit"
-                  className="py-2 px-4 bg-panel text-white rounded-md font-semibold"
+                  className="py-2 px-4 bg-primary text-white rounded-md font-semibold"
                 >
                   {studentData ? "Save Changes" : "Add Student"}
                 </button>
                 <button
                   type="button"
                   onClick={onClose}
-                  className="py-2 px-4 text-panel rounded-md font-semibold"
+                  className="py-2 px-4 text-primary rounded-md font-semibold"
                 >
                   Cancel
                 </button>

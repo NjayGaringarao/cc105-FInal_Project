@@ -10,20 +10,20 @@ function YearLevelTab({
   const years = ["First", "Second", "Third", "Fourth"];
 
   return (
-    <div className="border-2 border-panel rounded-lg overflow-hidden">
+    <div className="border-2 border-primary rounded-lg overflow-hidden">
       <div className="my-2">
-        <span className="text-panel font-extrabold text-2xl sm:text-2xl md:text-3xl lg:text-3xl px-4">
+        <span className="text-primary font-extrabold text-2xl sm:text-2xl md:text-3xl lg:text-3xl px-4">
           Year Level
         </span>
       </div>
-      <div className="border-panel border-t-2 flex">
+      <div className="border-primary border-t-2 flex">
         {years.map((year, index) => {
           const yearNumber = index + 1;
           return (
             <button
               key={yearNumber}
               className={`flex-1 py-2 ${
-                displayingYear === yearNumber ? "bg-lightPanel" : ""
+                displayingYear === yearNumber ? "bg-lightPrimary" : ""
               }`}
               onClick={() => setDisplayingYear(yearNumber)}
             >

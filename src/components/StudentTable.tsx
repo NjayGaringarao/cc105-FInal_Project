@@ -51,8 +51,8 @@ const StudentTable: React.FC<StudentTableProps> = ({
 
   return (
     <div className="overflow-auto h-full">
-      <table className="table-auto w-full border-collapse border border-lightPanel">
-        <thead className="font-mono bg-lightPanel text-gray-600 text-lg sm:text-lg md:text-xl lg:text-2xl px-4 sticky top-0">
+      <table className="table-auto w-full border-collapse border border-lightPrimary">
+        <thead className="font-mono bg-lightPrimary text-gray-600 text-lg sm:text-lg md:text-xl lg:text-2xl px-4 sticky top-0">
           <tr>
             <th className="border border-gray-400 p-4">
               <input
@@ -106,7 +106,7 @@ const StudentTable: React.FC<StudentTableProps> = ({
       </table>
       {!data.length && (
         <div className="h-40 rounded-lg flex items-center justify-center">
-          <span className="text-panel font-mono text-lg sm:text-lg md:text-xl lg:text-xl font-semibold">{`No data for ${yearLevel} Year`}</span>
+          <span className="text-primary font-mono text-lg sm:text-lg md:text-xl lg:text-xl font-semibold">{`No data for ${yearLevel} Year`}</span>
         </div>
       )}
     </div>

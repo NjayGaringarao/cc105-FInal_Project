@@ -10,8 +10,8 @@ export default {
     extend: {
       colors: {
         background: "var(--background)",
-        panel: "#798645",
-        lightPanel: "#F2EED7",
+        primary: "#798645",
+        lightPrimary: "#F2EED7",
       },
     },
   },
