@@ -2,6 +2,8 @@
 
 ## Overview
 
+---
+
 This project is an Information Management System (IMS) developed with a focus on handling student data efficiently. The system allows for CRUD operations (Create, Read, Update, Delete) on student records and provides functionalities such as:
 
 - Viewing student information based on year levels.
@@ -17,9 +19,9 @@ This project is an Information Management System (IMS) developed with a focus on
 - **Database**: MariaDB for storing student data
 - **Styling**: Tailwind CSS for responsive and clean UI design
 
----
-
 ## Features
+
+---
 
 ### Student Management:
 
@@ -36,43 +38,39 @@ This project is an Information Management System (IMS) developed with a focus on
 
 ## Setup
 
+---
+
 ### Prerequisites
 
 Before you begin, make sure you have the following installed:
 
 - [XAMPP](https://www.apachefriends.org/) or a compatible database
 - [Node.js](https://nodejs.org/) (v14 or later)
-- [Git] (https://git-scm.com/) required in cloning this repository
+- [Git](https://git-scm.com/) required in cloning this repository
 - [Visual Studio Code](https://code.visualstudio.com/) or other source code editor
 
 ### Backend Installation (XAMPP)
 
 To set up the backend using XAMPP, follow these steps:
 
----
-
 1. **Install and Configure XAMPP**
+
    - Download and install XAMPP from the [official website](https://www.apachefriends.org/) if not installed.
    - Launch XAMPP and start the **Apache** and **MySQL** services.
 
----
-
 2. **Create the Database**
-   1. Open [phpMyAdmin](http://localhost/phpmyadmin) in your browser.
-   2. Click on **"New"** in the left-hand sidebar to create a new database.
-   3. Name the database `BSCS_Student` (or the name you specified in the `.env` file).
-   4. Click **Create**.
 
----
+   - Open [phpMyAdmin](http://localhost/phpmyadmin) in your browser.
+   - Click on **"New"** in the left-hand sidebar to create a new database.
+   - Name the database `BSCS_Student` (or the name you specified in the `.env` file).
+   - Click **Create**.
 
 3. **Import the Database Schema**
-   1. Download [BSCS_Student.zip](https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/BSCS_Student.zip) and extract the BSCS_Student.sql file.
-   2. Navigate to the `database/` folder in the project directory where the SQL schema file (e.g., `bscs_student.sql`) is located.
-   3. In phpMyAdmin, select the `BSCS_Student` database.
-   4. Click **Import** in the top menu.
-   5. Choose the `BSCS_Student.sql` file from download directory and click **Go** to import the schema and initial data.
-
----
+   - Download [BSCS_Student.zip](https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/BSCS_Student.zip) and extract the BSCS_Student.sql file.
+   - Navigate to the `database/` folder in the project directory where the SQL schema file (e.g., `bscs_student.sql`) is located.
+   - In phpMyAdmin, select the `BSCS_Student` database.
+   - Click **Import** in the top menu.
+   - Choose the `BSCS_Student.sql` file from download directory and click **Go** to import the schema and initial data.
 
 ### Frontend Installation (NextJS)
 
@@ -110,9 +108,9 @@ To set up the backend using XAMPP, follow these steps:
 
 5. Visit the application in your browser at `http://localhost:3000`.
 
----
-
 ## API Endpoints
+
+---
 
 The following API endpoints are available in the project:
 
@@ -144,15 +142,19 @@ Delete a student by student number.
 
 ## Folder Structure
 
-- `pages/`: Contains the main pages of the app (Next.js pages).
-- `components/`: Contains reusable React components.
-- `lib/`: Contains database-related functions and Appwrite interactions.
+---
+
+- `.next/`: Contains NextJS Frameworks Essentials.
+- `.github/`: Contains essential files for README.md.
+- `lib/`: Contains database-related functions.
 - `public/`: Static files like images and icons.
-- `styles/`: Tailwind CSS configurations.
+- `src/`: Contains the Source Code.
 
 ---
 
 ## License
+
+---
 
 This project is licensed under the MIT License.
 
