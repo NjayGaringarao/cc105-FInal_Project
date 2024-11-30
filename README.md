@@ -63,7 +63,6 @@ To set up the backend using XAMPP, follow these steps:
 
 3. **Import the Database Schema**
    - Download [BSCS_Student.zip](https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/BSCS_Student.zip) and extract the BSCS_Student.sql file.
-   - Navigate to the `database/` folder in the project directory where the SQL schema file (e.g., `bscs_student.sql`) is located.
    - In phpMyAdmin, select the `BSCS_Student` database.
    - Click **Import** in the top menu.
    - Choose the `BSCS_Student.sql` file from download directory and click **Go** to import the schema and initial data.
