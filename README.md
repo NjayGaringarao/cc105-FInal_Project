@@ -181,8 +181,7 @@ Under the following terms:
 
 ### Full License Text
 
-The full text of the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License** can be found at:  
-[https://creativecommons.org/licenses/by-nc-nd/4.0/](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+The full text of the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License**
 
 This license does not grant permission for commercial use or for the creation of derivative works. For more information, please refer to the full terms of the license.
 
