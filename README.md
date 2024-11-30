@@ -187,4 +187,4 @@ This license does not grant permission for commercial use or for the creation of
 
 ---
 
-For the full legal text, you can view the complete license in the [LICENSE file](https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/LICENSE.md).
+For the full legal text, you can view the complete license in the [LICENSE file](https://github.com/NjayGaringarao/cc105-FInal_Project/blob/main/LICENSE.md).
