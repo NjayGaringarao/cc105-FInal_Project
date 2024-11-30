@@ -52,7 +52,7 @@ const StudentTable: React.FC<StudentTableProps> = ({
   return (
     <div className="overflow-auto h-full">
       <table className="table-auto w-full border-collapse border border-lightPanel">
-        <thead className="font-mono bg-lightPanel text-gray-600 text-lg sm:text-lg md:text-xl lg:text-2xl px-4">
+        <thead className="font-mono bg-lightPanel text-gray-600 text-lg sm:text-lg md:text-xl lg:text-2xl px-4 sticky top-0">
           <tr>
             <th className="border border-gray-400 p-4">
               <input

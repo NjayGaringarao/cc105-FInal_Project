@@ -39,6 +39,13 @@ export default function MainSection() {
   };
 
   const deleteStudentDataHandle = async () => {
+    if (
+      !confirm(
+        `${selectedStudentData.length} record/s will be deleted. This cannot be undone. Would you like to continue?`
+      )
+    )
+      return;
+
     setIsLoading(true);
 
     selectedStudentData.forEach(async (studentData) => {
@@ -63,6 +70,7 @@ export default function MainSection() {
         }
 
         const result = await response.json();
+        setSelectedStudentData([]);
         console.log("Student deleted successfully:", result);
       } catch (error) {
         console.error("Error deleting student:", error);
@@ -125,9 +133,9 @@ export default function MainSection() {
             {onEditData && (
               <button
                 onClick={openModal}
-                className="px-4 py-2 my-1 mr-2 bg-gray-300 text-white rounded-md"
+                className="px-4 py-2 my-1 mr-2 bg-panel text-white rounded-md"
               >
-                <span className="font-semibold text-gray-700 text-md sm:text-md md:text-lg lg:text-xl">
+                <span className="font-semibold  text-md sm:text-md md:text-lg lg:text-xl">
                   Edit
                 </span>
               </button>

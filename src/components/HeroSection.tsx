@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <div
-      className="relative bg-panel h-screen w-screen items-center justify-center overflow-hidden"
+      className="relative bg-panel h-screen w-screen items-center justify-center overflow-x-hidden"
       style={{
         backgroundImage: "url('/images/prmsu_gate.png')",
         backgroundSize: "cover",
