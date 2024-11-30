@@ -21,16 +21,32 @@ This project is an Information Management System (IMS) developed with a focus on
 
 ### Student Management:
 
-- **Add Students**: Register students with basic details such as Student Number, Name, Year Level, Contact Info, etc.
-- **Edit Students**: Modify student details, including name, year level, and contact info.
 - **View Students**: Filter and view students based on year level.
+  ![Screenshot](https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/read.png)
+
+- **Add Students**: Register students with basic details such as Student Number, Name, Year Level, Contact Info, etc.
+  ![Screenshot](https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/add.png)
+
+- **Edit Students**: Modify student details, including name, year level, and contact info.
+  ![Screenshot](https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/edit.png)
+
 - **Delete Students**: Remove student records from the system.
+  ![Screenshot](https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/delete.png)
 
 ---
 
 ### Responsive Design:
 
 - The project is designed to be fully responsive, ensuring that it works seamlessly across mobile, tablet, and desktop devices.
+
+**Mobile**
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+  <img src="https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/mview.png" width="48%" />
+  <img src="https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/mcreate.png" width="48%" />
+  <img src="https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/medit.png" width="48%" />
+  <img src="https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/mdelete.png" width="48%" />
+</div>
 
 ## Setup
 
