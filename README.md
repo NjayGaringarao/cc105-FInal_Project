@@ -2,8 +2,6 @@
 
 ## Overview
 
----
-
 This project is an Information Management System (IMS) developed with a focus on handling student data efficiently. The system allows for CRUD operations (Create, Read, Update, Delete) on student records and provides functionalities such as:
 
 - Viewing student information based on year levels.
@@ -21,8 +19,6 @@ This project is an Information Management System (IMS) developed with a focus on
 
 ## Features
 
----
-
 ### Student Management:
 
 - **Add Students**: Register students with basic details such as Student Number, Name, Year Level, Contact Info, etc.
@@ -30,15 +26,13 @@ This project is an Information Management System (IMS) developed with a focus on
 - **View Students**: Filter and view students based on year level.
 - **Delete Students**: Remove student records from the system.
 
+---
+
 ### Responsive Design:
 
 - The project is designed to be fully responsive, ensuring that it works seamlessly across mobile, tablet, and desktop devices.
 
----
-
 ## Setup
-
----
 
 ### Prerequisites
 
@@ -48,6 +42,8 @@ Before you begin, make sure you have the following installed:
 - [Node.js](https://nodejs.org/) (v14 or later)
 - [Git](https://git-scm.com/) required in cloning this repository
 - [Visual Studio Code](https://code.visualstudio.com/) or other source code editor
+
+---
 
 ### Backend Installation (XAMPP)
 
@@ -71,6 +67,8 @@ To set up the backend using XAMPP, follow these steps:
    - In phpMyAdmin, select the `BSCS_Student` database.
    - Click **Import** in the top menu.
    - Choose the `BSCS_Student.sql` file from download directory and click **Go** to import the schema and initial data.
+
+---
 
 ### Frontend Installation (NextJS)
 
@@ -110,8 +108,6 @@ To set up the backend using XAMPP, follow these steps:
 
 ## API Endpoints
 
----
-
 The following API endpoints are available in the project:
 
 ### GET `/api/students`
@@ -120,11 +116,15 @@ Fetch all students by year level.
 
 - Query Parameter: `yearLevel` (integer)
 
+---
+
 ### POST `/api/students`
 
 Add a new student.
 
 - Request Body: JSON object with student data (e.g., student_no, last_name, first_name, etc.)
+
+---
 
 ### PUT `/api/students`
 
@@ -132,17 +132,15 @@ Update an existing student's details.
 
 - Request Body: JSON object with student data (e.g., student_no, last_name, first_name, etc.)
 
+---
+
 ### DELETE `/api/students`
 
 Delete a student by student number.
 
 - Request Body: JSON object with the student number to delete.
 
----
-
 ## Folder Structure
-
----
 
 - `.next/`: Contains NextJS Frameworks Essentials.
 - `.github/`: Contains essential files for README.md.
@@ -150,12 +148,6 @@ Delete a student by student number.
 - `public/`: Static files like images and icons.
 - `src/`: Contains the Source Code.
 
----
-
 ## License
 
----
-
 This project is licensed under the MIT License.
-
----
