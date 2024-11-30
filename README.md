@@ -165,4 +165,4 @@ Delete a student by student number.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivatives (CC BY-NC-ND) 4.0 International License](https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/LICENSE).

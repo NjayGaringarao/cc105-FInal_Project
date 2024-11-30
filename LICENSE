@@ -1,21 +1,24 @@
-MIT License
+Copyright (c) 2024 Njay Garingarao
 
-Copyright (c) [year] [Your Name]
+## License
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This project is licensed under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License** (CC BY-NC-ND 4.0).
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+You are free to:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+- **Share** — copy and redistribute the material in any medium, format, or platform **for non-commercial purposes only**.
+
+Under the following terms:
+
+- **Attribution** — You must provide appropriate credit to the author(s), give a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the author(s) endorse you or your use of the material.
+- **NonCommercial** — You may not use the material for commercial purposes. For the purposes of this license, "commercial" refers to any activity undertaken with the aim of earning revenue or financial gain.
+- **NoDerivatives** — If you remix, transform, or build upon the material, you may not distribute the modified material. You must distribute the material only in its original form, as provided by the author.
+
+---
+
+### Full License Text
+
+The full text of the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License** can be found at:  
+[https://creativecommons.org/licenses/by-nc-nd/4.0/](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+This license does not grant permission for commercial use or for the creation of derivative works. For more information, please refer to the full terms of the license.
