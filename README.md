@@ -42,10 +42,10 @@ This project is an Information Management System (IMS) developed with a focus on
 **Mobile**
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-  <img src="https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/mview.png" width="48%" />
-  <img src="https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/mcreate.png" width="48%" />
-  <img src="https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/medit.png" width="48%" />
-  <img src="https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/mdelete.png" width="48%" />
+  <img src="https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/mview.jpg" width="48%" />
+  <img src="https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/mcreate.jpg" width="48%" />
+  <img src="https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/medit.jpg" width="48%" />
+  <img src="https://raw.githubusercontent.com/NjayGaringarao/cc105-FInal_Project/main/github/mdelete.jpg" width="48%" />
 </div>
 
 ## Setup
